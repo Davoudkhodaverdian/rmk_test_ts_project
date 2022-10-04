@@ -1,16 +1,18 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import authReducer from './auth';
+import currentPersonReducer from './currentPerson';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
 const rootReducer = combineReducers({
     auth: authReducer,
+    currentPerson: currentPersonReducer,
 })
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ["auth"] // only this item will be persisted
+    whitelist: ["auth","currentPerson"] // only this item will be persisted
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

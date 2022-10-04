@@ -9,6 +9,8 @@ import Layout from './components/layout';
 import { Provider } from 'react-redux';
 import { store, persistor } from './app/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import Products from './components/productsAgGrid';
+import PaginateProducts from './components/paginateProducts';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,8 +24,10 @@ root.render(
           <Routes>
             <Route path="/" element={<Layout />} >
               <Route index element={<Main />} />
+              <Route path="/products-ag-grid" element={<Products />} />
+              <Route path="/paginate-products" element={<PaginateProducts />} />
+             <Route path="/login" element={<Login />} />
             </Route>
-            <Route path="/login" element={<Login />} />
           </Routes>
         </BrowserRouter>
       </PersistGate>

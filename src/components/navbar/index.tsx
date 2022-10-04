@@ -12,6 +12,8 @@ const Navbar: React.FC = () => {
                             <img src='images/svg/logo.svg' className="h-10" alt="logo" />
                             <Link className="px-3" to={`/`}>صفحه اصلی</Link>
                             <Link className="px-3" to={`/login`}>صفحه لاگین</Link>
+                            <Link className="px-3" to={`/products-ag-grid`}>صفحه محصولات ag-grid</Link>
+                            <Link className="px-3" to={`/paginate-products`}>صفحه محصولات paginate</Link>
                     </div>
                 </div>
                 
