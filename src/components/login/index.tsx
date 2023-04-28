@@ -24,7 +24,7 @@ const Login: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const navigate =   useNavigate();
     return (
-        <div className="w-full flex justify-center items-center mt-10">
+        <div   className="text-right w-full flex justify-center items-center mt-10">
             <div className="bg-gray-100 shadow-lg rounded px-8 pt-6 pb-8 mb-4 flex flex-col w-full md:max-w-[500px] border border-gray-300">
                 <div className="mb-4">ورود</div>
                 <Formik
@@ -67,13 +67,13 @@ const Login: React.FC = () => {
                     }}
                 >
                     {formik => (
-                        <form onSubmit={formik.handleSubmit}>
+                        <form  dir='rtl' onSubmit={formik.handleSubmit}>
                             <div className="mb-4">
                                 <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="username">
                                     نام کاربری
                                 </label>
-                                <input id="username" type="text"
-                                    className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-grey-darker"
+                                <input id="username" type="text" dir="auto"
+                                    className="rtl:placeholder:text-right ltr:placeholder:text-left shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-grey-darker"
                                     placeholder="نام کاربری را وارد کنید" {...formik.getFieldProps('username')} />
                                 {formik.touched.username && formik.errors.username ? (<div className="text-sm text-red-600 my-2">{formik.errors.username}</div>) : null}
                             </div>
@@ -81,8 +81,8 @@ const Login: React.FC = () => {
                                 <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="password">
                                     رمز عبور
                                 </label>
-                                <input id="password" type="password"
-                                    className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-grey-darker"
+                                <input id="password" type="password"  dir="auto"
+                                    className="rtl:placeholder:text-right ltr:placeholder:text-left shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-grey-darker"
                                     placeholder="رمز عبور را وارد کنید" {...formik.getFieldProps('password')} />
                                 {formik.touched.password && formik.errors.password ? (<div className="text-sm text-red-600 my-2">{formik.errors.password}</div>) : null}
                             </div>
